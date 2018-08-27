@@ -1,0 +1,119 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "healthy me",
+            "intents": [
+                {
+                    "name": "SetSleep",
+                    "slots": [
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "I slept for {quantity} hours {date}"
+                    ]
+                },
+                {
+                    "name": "GetSleep",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "How much did I sleep {date}",
+                        "How many hours did I sleep for {date}"
+                    ]
+                },
+                {
+                    "name": "GetWater",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "How much water did I drink {date}",
+                        "How many glasses of water did I drink {date}"
+                    ]
+                },
+                {
+                    "name": "SetWater",
+                    "slots": [
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "I drank {quantity} glasses of water {date}",
+                        "I drank {quantity} more glasses of water {date}"
+                    ]
+                },
+                {
+                    "name": "GetWeight",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "How much did I weigh {date}",
+                        "What is my current weight"
+                    ]
+                },
+                {
+                    "name": "SetWeight",
+                    "slots": [
+                        {
+                            "name": "quantity",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "I weigh {quantity} kilograms {date}",
+                        "My weight is {quantity} kilograms as of {date}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}
