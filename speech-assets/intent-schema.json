@@ -7,7 +7,7 @@
                     "name": "SetSleep",
                     "slots": [
                         {
-                            "name": "quantity",
+                            "name": "sleep",
                             "type": "AMAZON.NUMBER"
                         },
                         {
@@ -17,6 +17,31 @@
                     ],
                     "samples": [
                         "I slept for {quantity} hours {date}"
+                    ]
+                },
+                {
+                    "name": "GetSleep",
+                    "slots": [
+                        {
+                            "name": "date",{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "healthy me",
+            "intents": [
+                {
+                    "name": "SetSleep",
+                    "slots": [
+                        {
+                            "name": "sleep",
+                            "type": "AMAZON.NUMBER"
+                        },
+						{
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "I slept for {sleep} hours {date}"
                     ]
                 },
                 {
@@ -49,7 +74,7 @@
                     "name": "SetWater",
                     "slots": [
                         {
-                            "name": "quantity",
+                            "name": "water",
                             "type": "AMAZON.NUMBER"
                         },
                         {
@@ -58,8 +83,8 @@
                         }
                     ],
                     "samples": [
-                        "I drank {quantity} glasses of water {date}",
-                        "I drank {quantity} more glasses of water {date}"
+                        "I drank {water} glasses of water {date}",
+                        "I drank {water} more glasses of water {date}"
                     ]
                 },
                 {
@@ -79,7 +104,7 @@
                     "name": "SetWeight",
                     "slots": [
                         {
-                            "name": "quantity",
+                            "name": "weight",
                             "type": "AMAZON.NUMBER"
                         },
                         {
@@ -88,16 +113,16 @@
                         }
                     ],
                     "samples": [
-                        "I weigh {quantity} kilograms {date}",
-                        "My weight is {quantity} kilograms as of {date}"
+                        "I weigh {weight} kilograms {date}",
+                        "My weight is {weight} kilograms as of {date}"
                     ]
                 },
                 {
-                    "name": "AMAZON.FallbackIntent",
+                    "name": "AMAZON.StartOverIntent",
                     "samples": []
                 },
                 {
-                    "name": "AMAZON.CancelIntent",
+                    "name": "AMAZON.RepeatIntent",
                     "samples": []
                 },
                 {
@@ -105,11 +130,19 @@
                     "samples": []
                 },
                 {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
                     "name": "AMAZON.StopIntent",
                     "samples": []
                 },
                 {
-                    "name": "AMAZON.NavigateHomeIntent",
+                    "name": "AMAZON.CancelIntent",
                     "samples": []
                 }
             ],
