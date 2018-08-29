@@ -16,32 +16,8 @@
                         }
                     ],
                     "samples": [
-                        "I slept for {quantity} hours {date}"
-                    ]
-                },
-                {
-                    "name": "GetSleep",
-                    "slots": [
-                        {
-                            "name": "date",{
-    "interactionModel": {
-        "languageModel": {
-            "invocationName": "healthy me",
-            "intents": [
-                {
-                    "name": "SetSleep",
-                    "slots": [
-                        {
-                            "name": "sleep",
-                            "type": "AMAZON.NUMBER"
-                        },
-						{
-                            "name": "date",
-                            "type": "AMAZON.DATE"
-                        }
-                    ],
-                    "samples": [
-                        "I slept for {sleep} hours {date}"
+                        "I slept for {sleep} hours {date}",
+                        "{date} I slept for {sleep} hours"
                     ]
                 },
                 {
@@ -84,7 +60,7 @@
                     ],
                     "samples": [
                         "I drank {water} glasses of water {date}",
-                        "I drank {water} more glasses of water {date}"
+                        "I had {water} glasses of water {date}"
                     ]
                 },
                 {
@@ -96,8 +72,8 @@
                         }
                     ],
                     "samples": [
-                        "How much did I weigh {date}",
-                        "What is my current weight"
+                        "How much do I weigh as of {date}",
+                        "What is my weight {date}"
                     ]
                 },
                 {
@@ -115,6 +91,21 @@
                     "samples": [
                         "I weigh {weight} kilograms {date}",
                         "My weight is {weight} kilograms as of {date}"
+                    ]
+                },
+                {
+                    "name": "DailySummary",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "How healthy was my day on {date}",
+                        "How was my day {date}",
+                        "What is my daily summary for {date}",
+                        "Tell me my daily summary for {date}"
                     ]
                 },
                 {
