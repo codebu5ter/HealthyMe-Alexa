@@ -73,7 +73,7 @@
                     ],
                     "samples": [
                         "How much do I weigh as of {date}",
-                        "What is my weight {date}"
+                        "What was my weight {date}"
                     ]
                 },
                 {
