@@ -73,7 +73,8 @@
                     ],
                     "samples": [
                         "How much do I weigh as of {date}",
-                        "What was my weight {date}"
+                        "What was my weight {date}",
+                        "How much did I weigh {date}"
                     ]
                 },
                 {
@@ -94,6 +95,38 @@
                     ]
                 },
                 {
+                    "name": "GetHeight",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "How much do I measure as of {date}",
+                        "What was my height {date}",
+                        "How tall was I {date}"
+                    ]
+                },
+                {
+                    "name": "SetHeight",
+                    "slots": [
+                        {
+                            "name": "height",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "I measured {height} centimeters {date}",
+                        "My height is {height} centimeters as of {date}",
+                        "I was {height} centimeters tall {date}"
+                    ]
+                },
+                {
                     "name": "DailySummary",
                     "slots": [
                         {
@@ -106,6 +139,20 @@
                         "How was my day {date}",
                         "What is my daily summary for {date}",
                         "Tell me my daily summary for {date}"
+                    ]
+                },
+                {
+                    "name": "BodyMass",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "What is my body mass index for {date}",
+                        "Tell me my body mass index for {date}",
+                        "What is my body mass index {date}"
                     ]
                 },
                 {
