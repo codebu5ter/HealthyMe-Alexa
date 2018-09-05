@@ -153,6 +153,54 @@ var storage = (function() {
 				callback(weight);
 			});
 		},
+		saveHeight: function(height, date, session, callback) {
+			var params = {
+				TableName: 'HealthyMe',
+				Key:{
+					'UserId': session.user.userId,
+					'Date': date
+				},
+				UpdateExpression: "set Height = :h",
+				ExpressionAttributeValues:{
+					":h":height
+				},
+				ReturnValues:"UPDATED_NEW"
+			};
+			dynamodb.update(params, function(err, data) {
+				if (err) {
+					console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+				} else {
+					console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+					callback(height);
+				}
+			})
+		},
+		getHeight: function(date, session, callback) {
+			var params = {
+				TableName: 'HealthyMe',
+				KeyConditionExpression: "#usr = :user and #dt = :date",
+				ExpressionAttributeNames: {
+					'#usr': 'UserId',
+					'#dt': 'Date'
+				},
+				ExpressionAttributeValues: {
+					':user': session.user.userId,
+					':date': date
+				}
+			};
+			dynamodb.query(params, function(err, data) {
+				var height = '';
+				if (err) {
+					console.log("Unable to query. Error:", JSON.stringify(err, null, 2));
+				} else {
+					console.log("Query succeeded.");
+					data.Items.forEach(function(item) {
+						height = item.Height;
+					});
+				}
+				callback(height);
+			});
+		},
 		getDailySummary: function(date, session, callback) {
 			var params = {
 				TableName: 'HealthyMe',
@@ -183,6 +231,34 @@ var storage = (function() {
 				callback(sleep, water, weight);
 			});
 		},
+		getBodyMass: function(date, session, callback) {
+			var params = {
+				TableName: 'HealthyMe',
+				KeyConditionExpression: "#usr = :user and #dt = :date",
+				ExpressionAttributeNames: {
+					'#usr': 'UserId',
+					'#dt': 'Date'
+				},
+				ExpressionAttributeValues: {
+					':user': session.user.userId,
+					':date': date
+				}
+			};
+			dynamodb.query(params, function(err, data) {
+				var weight = '';
+				var height = '';
+				if (err) {
+					console.log("Unable to query. Error:", JSON.stringify(err, null, 2));
+				} else {
+					console.log("Query succeeded.");
+					data.Items.forEach(function(item) {
+						weight = item.Weight;
+						height = item.Height;
+					});
+				}
+				callback(height, weight);
+			});
+		}
 	}
 })();
 
